@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@scion/workbench/theming';
+
+@include wb-theme();
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+}
