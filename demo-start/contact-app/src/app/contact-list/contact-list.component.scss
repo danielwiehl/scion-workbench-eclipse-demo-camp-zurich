@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  padding: 1em;
+
+  > ul {
+    flex: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid rgba(85, 85, 85, .25);
+    border-radius: 5px;
+    padding: .5em;
+    color: rgba(55, 95, 156);
+
+    > li {
+      padding: 1em;
+
+      &:not(:first-child) {
+        border-top: 1px solid rgba(85, 85, 85, .25);
+      }
+
+      &:last-child {
+        border-bottom: 1px solid rgba(85, 85, 85, .25);
+      }
+    }
+  }
+}

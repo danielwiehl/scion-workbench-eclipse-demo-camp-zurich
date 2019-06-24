@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+
+  > form {
+    flex: none;
+    display: grid;
+    grid-template-columns: minmax(80px, 120px) auto;
+    grid-column-gap: 1em;
+    grid-row-gap: .5em;
+    grid-template-rows: auto;
+
+    border: 1px solid rgba(85, 85, 85, .25);
+    border-radius: 5px;
+    padding: 1em;
+    align-items: center;
+  }
+
+  > button {
+    margin-top: .5em;
+    align-self: flex-start;
+  }
+}
