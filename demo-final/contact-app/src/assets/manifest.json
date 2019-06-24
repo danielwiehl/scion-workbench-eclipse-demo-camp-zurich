@@ -1,0 +1,49 @@
+{
+  "name": "Contact Application",
+  "baseUrl": "#",
+  "capabilities": [
+    {
+      "type": "activity",
+      "qualifier": {
+        "entity": "contacts"
+      },
+      "description": "Lists all contacts",
+      "properties": {
+        "title": "Contacts",
+        "itemText": "person_outline",
+        "itemCssClass": "material-icons",
+        "path": "contacts"
+      }
+    },
+    {
+      "type": "view",
+      "qualifier": {
+        "entity": "contact",
+        "id": "*"
+      },
+      "description": "Shows details of a contact.",
+      "properties": {
+        "path": "contacts/:id",
+        "heading": "Contact"
+      }
+    }
+  ],
+  "intents": [
+    {
+      "type": "popup",
+      "qualifier": {
+        "entity": "communication",
+        "action": "create",
+        "contactId": "*"
+      }
+    },
+    {
+      "type": "view",
+      "qualifier": {
+        "entity": "communication",
+        "presentation": "list",
+        "contactId": "*"
+      }
+    }
+  ]
+}

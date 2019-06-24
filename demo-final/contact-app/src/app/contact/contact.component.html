@@ -1,0 +1,24 @@
+<form *ngIf="contact">
+  <label for="firstname">Firstname</label>
+  <input id="firstname" class="inline-editable" [(ngModel)]="contact.firstname" name="firstname" (blur)="onSave()">
+
+  <label for="lastname">Lastname</label>
+  <input id="lastname" class="inline-editable" [(ngModel)]="contact.lastname" name="lastname" (blur)="onSave()">
+
+  <label for="street">Street</label>
+  <input id="street" class="inline-editable" [(ngModel)]="contact.street" name="street" (blur)="onSave()">
+
+  <label for="city">City</label>
+  <input id="city" class="inline-editable" [(ngModel)]="contact.city" name="city" (blur)="onSave()">
+
+  <label for="email">Email</label>
+  <input id="email" class="inline-editable" [(ngModel)]="contact.email" name="email" (blur)="onSave()">
+
+  <label for="phone">Phone</label>
+  <input id="phone" class="inline-editable" [(ngModel)]="contact.phone" name="phone" (blur)="onSave()">
+</form>
+
+<button (click)="onCommunicationAdd($event)">Create a new communication</button>
+<button [wbRouterLink]="{entity: 'communication', presentation: 'list', contactId: contact.id}">
+  Show communications
+</button>

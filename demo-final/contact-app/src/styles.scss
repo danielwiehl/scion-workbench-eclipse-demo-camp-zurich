@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:normal,bold,italic,bolditalic|Roboto+Mono');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@function primaryColor($opacity: 1) {
+  @return rgba(55, 95, 156, $opacity);
+}
+
+@function accentColor($opacity: 1) {
+  @return rgba(85, 85, 85, $opacity);
+}
+
+@function errorColor($opacity: 1) {
+  @return rgba(255, 55, 55, $opacity);
+}
+
+/**
+ * Provides the styling for an input field.
+ */
+@mixin input-field() {
+  border: 1px solid accentColor(.25);
+  border-radius: 2px;
+  padding: .5em;
+  outline: 0;
+  font-family: inherit;
+  font-size: inherit;
+
+  &:focus-within {
+    border-color: primaryColor();
+    box-shadow: 0 0 6px 0 primaryColor(.35);
+  }
+
+  &.inline-editable:not(.ng-invalid) {
+    &:not(:focus-within):not(:hover):not(:active) {
+      border: 1px solid transparent;
+    }
+
+    &:hover:not(:active):not(:focus-within) {
+      cursor: pointer;
+    }
+  }
+
+  &.ng-invalid.ng-touched {
+    border-color: errorColor(1);
+    box-shadow: 0 0 6px 0 errorColor(.35);
+  }
+
+  &[readonly] {
+    color: accentColor(.5);
+  }
+
+  &[type="checkbox"] {
+    margin: .75em 0;
+  }
+}
+
+@mixin button() {
+  cursor: pointer;
+  padding: .5em 1.5em;
+  font-family: inherit;
+  color: rgba(51, 51, 51, .8);
+  border: 1px solid rgba(51, 51, 51, .5);
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+  &:focus, &:active {
+    border-color: primaryColor();
+    color: primaryColor();
+    outline: 0;
+    box-shadow: 0 0 8px 0 primaryColor(.35);
+  }
+
+  &:disabled {
+    color: rgba(51, 51, 51, .5);
+    border-style: dotted;
+    cursor: auto;
+  }
+}
+
+/**
+ * Provides the styling for a link.
+ */
+@mixin link($radius: 2px) {
+  color: rgb(55, 95, 156);
+  text-decoration: none;
+  outline: none;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: .9em;
+  box-sizing: border-box;
+
+  input, textarea, select {
+    @include input-field;
+  }
+
+  a {
+    @include link;
+  }
+
+  button {
+    @include button;
+  }
+}

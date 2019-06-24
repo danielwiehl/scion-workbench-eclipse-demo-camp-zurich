@@ -1,0 +1,8 @@
+@import '~@scion/workbench/theming';
+@import url('https://fonts.googleapis.com/css?family=Roboto:normal,bold,italic,bolditalic|Roboto+Mono');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@include wb-theme();
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+}

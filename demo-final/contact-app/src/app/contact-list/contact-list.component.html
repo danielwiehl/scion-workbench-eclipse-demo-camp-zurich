@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let contact of contactService.contacts$ | async">
+    <a [wbRouterLink]="{entity: 'contact', id: contact.id}">
+      {{contact.firstname}} {{contact.lastname}}
+    </a>
+  </li>
+</ul>
